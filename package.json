@@ -1,0 +1,32 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "event web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "cors": "^2.8.3",
+    "ejs": "^2.5.6",
+    "express": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "htmling": "0.0.8",
+    "jsonwebtoken": "^7.3.0",
+    "mongodb": "^2.2.24",
+    "mongoose": "*",
+    "mongoose-unique-validator": "^1.0.5",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0"
+  }
+}

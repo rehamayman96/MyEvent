@@ -1,0 +1,12 @@
+ <% include layouts/layout.html %>
+  <% for(var i=0; i< allevents.length;i++) { %>
+  <div class="card">
+<h4><strong>Name:</strong> <%= allevents[i].name%></h4>
+<h4><strong>Date:</strong> <%= allevents[i].date%></h4>
+<h5><strong>Category:</strong> <%= allevents[i].category%></h5>
+<br>
+  </div>
+  
+<br>
+<%} %>
+<% include layouts/footer.html %>
