@@ -34,7 +34,6 @@ let userController = {
         //check if any of the inputs is empty
         var errors = req.validationErrors();
         if (errors) {
-            console.log(errors);
             res.render('register', {
                 errors: errors
             });
