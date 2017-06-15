@@ -46,8 +46,13 @@
                 <%= error_msg%>
               </div>
               <% } %>
+              <% if(error!=""){ %>
+              <div class="alert alert-danger">
+                <%= error%>
+              </div>
+              <% } %>
 
-                <% if(errors || messages){ %>
+                <% if(errors || message){ %>
                   <div class="alert alert-danger" role="alert">
                     <% if(errors){ %>
                       <ul>
@@ -58,9 +63,9 @@
                           <% }) %>
                       </ul>
                       <% } %>
-                        <% if(messages){ %>
+                        <% if(message){ %>
                           <p>
-                            <%= messages%>
+                            <%= message%>
                           </p>
                           <% } %>
                   </div>
@@ -74,7 +79,7 @@
             $('#search').autocomplete({
                 source: function (req, res) {
                     $.ajax({
-                        url: "/autocomplete/" + req.term,
+                        url: "http://localhost:3000/autocomplete/" + req.term,
                         dataType: "jsonp",
                         type: "GET",
                         data: {
@@ -98,10 +103,4 @@
 
         });
     </script>
-
-    <script type="text/javascript">
-    document.getElementById("search_btn").onclick = function () {
-        window.location.replace("/search");
-    };
-</script>
     <!-- /container -->

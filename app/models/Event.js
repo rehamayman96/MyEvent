@@ -1,3 +1,4 @@
+//Required dependences 
 var mongoose = require('mongoose');
 
 var EventSchema = mongoose.Schema({

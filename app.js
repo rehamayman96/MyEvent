@@ -1,3 +1,4 @@
+//Required dependences 
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -6,7 +7,6 @@ var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
-var HTMLing = require('htmling');
 var cors = require('cors')
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
@@ -49,7 +49,9 @@ app.use(expressValidator({
     };
   }
 }));
+
 app.use(cors());
+//Use session for Passport
 app.use(session({ secret: 'woot',
                   resave: true, 
                   saveUninitialized: true}));
@@ -62,6 +64,7 @@ app.use(flash());
 // Global Vars
 app.use(function (req, res, next) {
   res.locals.user = req.user || null;
+  res.locals.message = req.message || null;
   res.locals.errors=null;
   res.locals.messages=null;
   res.locals.success_msg = req.flash('success_msg');

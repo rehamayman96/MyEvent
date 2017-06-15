@@ -19,14 +19,11 @@
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
-    "htmling": "0.0.8",
-    "jsonwebtoken": "^7.3.0",
     "mongodb": "^2.2.24",
     "mongoose": "*",
     "mongoose-unique-validator": "^1.0.5",
     "passport": "*",
     "passport-http": "*",
-    "passport-jwt": "^2.2.1",
     "passport-local": "^1.0.0"
   }
 }

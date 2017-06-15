@@ -1,10 +1,11 @@
+//Required dependences 
 var express = require('express');
 var routes = express.Router();
 var userController = require('./controller/userController');
 var eventController = require('./controller/eventController');
 var passport = require('passport');
 require('./config/passport')(passport);
-
+//Get APIs
 routes.get('/', function (req, res) {
     res.render('index');
 });
@@ -34,7 +35,8 @@ routes.get('/logout', function (req, res) {
     });
 });
 routes.get('/autocomplete/:search',userController.passportauth,eventController.autocomplete);
-
+                /*------------------------------------------------------------------*/
+//Post APIs
 routes.post('/search',userController.ensureAuthentication,eventController.search);
 
 routes.post('/login', userController.passportauth, userController.login);

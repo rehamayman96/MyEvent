@@ -1,3 +1,4 @@
+//Required dependences 
 var LocalStrategy=require('passport-local').Strategy;
 var User = require('../models/User');
 var bcrypt = require('bcryptjs');
@@ -24,11 +25,12 @@ passport.use('login', new LocalStrategy(
    	});
    });
   }));
-
+//Serialize the authenticated user 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
+//Deserialize the authenticated user
 passport.deserializeUser(function(id, done) {
   User.findById(id, function(err, user) {
     done(err, user);
