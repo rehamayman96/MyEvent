@@ -29,12 +29,11 @@ routes.get('/logout', function (req, res) {
         if (err) {
         } else {
             req.user = null;
-            res.locals.user
             res.redirect('/login');
         }
     });
 });
-routes.get('/autocomplete/:search',userController.passportauth,eventController.autocomplete);
+routes.get('/autocomplete/:search',userController.ensureAuthentication,eventController.autocomplete);
                 /*------------------------------------------------------------------*/
 //Post APIs
 routes.post('/search',userController.ensureAuthentication,eventController.search);
